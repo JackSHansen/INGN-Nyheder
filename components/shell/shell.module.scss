@@ -1,0 +1,20 @@
+.shell {
+  /* Holder footer i bunden via kolonne-layout over hele viewporten. */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  /* Centralt indholdsområde med maksimal bredde. */
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding: 2rem 1.25rem 4rem;
+  }
+}

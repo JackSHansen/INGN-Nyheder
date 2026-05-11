@@ -1,0 +1,46 @@
+.header {
+  /* Sticky topbar der bliver synlig mens man scroller. */
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(36, 36, 36, 0.08);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7), 0 8px 18px rgba(36, 36, 36, 0.05);
+  backdrop-filter: blur(14px);
+}
+
+.inner {
+  /* Grid-opdeling: brand, navigation og to handlingsknapper. */
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 0.85rem 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand {
+  font-family: var(--font-righteous), cursive;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  line-height: 1;
+  color: #c52525;
+}
+
+.iconButton {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #c52525;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

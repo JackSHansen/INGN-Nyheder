@@ -1,0 +1,28 @@
+.nav {
+  /* Vandret kategori-menu med wrapping på mindre skærme. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  flex-wrap: wrap;
+}
+
+.link {
+  /* Hvert menupunkt med separator og aktiv tilstand. */
+  padding: 0.25rem 0.5rem;
+  color: #242424;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+
+  &:not(:last-child)::after {
+    content: "|";
+    margin-left: 0.5rem;
+    color: rgba(36, 36, 36, 0.58);
+  }
+
+  &[data-active="true"] {
+    color: #c52525;
+    font-weight: 700;
+  }
+}

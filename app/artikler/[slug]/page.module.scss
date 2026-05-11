@@ -1,0 +1,66 @@
+.article {
+  /* Hovedcontainer for artikelsiden med kort-lignende indpakning. */
+  display: grid;
+  gap: 1.6rem;
+  padding: 0 0 1rem;
+  background: #ffffff;
+  border: 1px solid rgba(36, 36, 36, 0.06);
+  box-shadow: 0 18px 40px rgba(36, 36, 36, 0.08);
+}
+
+.heroImageWrap {
+  width: 100%;
+}
+
+.heroImage {
+  /* Holder hero-billedet bredt og beskåret ens på tværs af skærme. */
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+}
+
+.metaBlock {
+  padding: 0 1.2rem;
+
+  h1 {
+    margin: 0.4rem 0 0;
+    font-family: var(--font-righteous), cursive;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.02;
+    color: #242424;
+  }
+}
+
+.category,
+.meta {
+  margin: 0;
+  color: #c52525;
+  font-size: 0.95rem;
+}
+
+.content {
+  /* Begrænser læsebredden for bedre læsbarhed i brødteksten. */
+  width: min(100%, 60rem);
+  margin: 0 auto;
+  padding: 0 1.2rem 2rem;
+  color: #242424;
+  font-size: 1.05rem;
+  line-height: 1.7;
+
+  p {
+    margin: 0 0 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroImage {
+    aspect-ratio: 16 / 10;
+  }
+
+  .metaBlock,
+  .content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

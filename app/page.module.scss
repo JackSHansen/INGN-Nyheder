@@ -1,0 +1,14 @@
+.emptyState {
+  /* Fallback-visning når en kategori ikke har artikler. */
+  padding: 2rem 0 1rem;
+
+  h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.4rem;
+  }
+
+  p {
+    margin: 0;
+    color: rgba(36, 36, 36, 0.78);
+  }
+}

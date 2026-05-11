@@ -1,0 +1,119 @@
+.card {
+  /* Grundstruktur for hvert kort: tekst øverst og billede nederst. */
+  display: grid;
+  grid-template-rows: auto auto;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(36, 36, 36, 0.08);
+  box-shadow: 0 10px 24px rgba(36, 36, 36, 0.06);
+  position: relative;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.textBlock {
+  padding: 1rem 1rem 0.9rem;
+  overflow: hidden;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-righteous), cursive;
+  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+  line-height: 1.02;
+  color: #242424;
+}
+
+.meta {
+  margin: 0.45rem 0 0;
+  color: #c52525;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.excerpt {
+  margin: 0.8rem 0 0;
+  color: rgba(36, 36, 36, 0.84);
+  line-height: 1.6;
+}
+
+.readMore {
+  display: inline-block;
+  margin-top: 0.85rem;
+  color: #242424;
+  font-size: 0.95rem;
+}
+
+.imageLink {
+  display: block;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.placeholder {
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #e7e0e0 0%, #f7f7f7 100%);
+}
+
+.card:hover,
+.card:focus-within {
+  /* Giver tydelig interaktion ved hover/fokus. */
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(36, 36, 36, 0.14);
+  border-color: rgba(36, 36, 36, 0.14);
+}
+
+.card:hover::after,
+.card:focus-within::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  box-shadow: 0 0 0 3px rgba(197, 37, 37, 0.06);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.card[data-featured="true"] {
+  /* Featured-kort får større typografi og bredere billedformat. */
+  grid-template-columns: 1fr;
+
+  .title {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  .image {
+    aspect-ratio: 16 / 6.5;
+  }
+
+  .placeholder {
+    aspect-ratio: 16 / 6.5;
+  }
+}
+
+.card[data-index="1"],
+.card[data-index="3"] {
+  .image {
+    aspect-ratio: 3 / 4;
+  }
+
+  .placeholder {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+.card[data-index="5"],
+.card[data-index="6"] {
+  .image {
+    aspect-ratio: 16 / 6;
+  }
+
+  .placeholder {
+    aspect-ratio: 16 / 6;
+  }
+}
