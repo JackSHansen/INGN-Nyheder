@@ -2,57 +2,65 @@
   /* Asymmetrisk 2-kolonne grid til kortplacering på desktop. */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(7, 1fr);
-  gap: 1rem;
-  margin-top: 1.5rem;
+  grid-template-areas:
+    "card0 card0"
+    "card1 card2"
+    "card1 card3"
+    "card4 card3"
+    "card5 card5"
+    "card6 card6"
+    "card7 card8";
+  gap: 0.6rem;
+  margin: 1rem auto 0;
+  width: min(100%, 860px);
+}
+
+.grid > * {
+  align-self: start;
 }
 
 .grid > [data-index="0"] {
   /* Første kort er featured og fylder hele bredden. */
-  grid-column: span 2 / span 2;
+  grid-area: card0;
 }
 
 .grid > [data-index="1"] {
-  grid-row: span 2 / span 2;
-  grid-row-start: 2;
+  grid-area: card1;
 }
 
 .grid > [data-index="2"] {
-  grid-row-start: 2;
+  grid-area: card2;
 }
 
 .grid > [data-index="3"] {
-  grid-row: span 2 / span 2;
-  grid-column-start: 2;
-  grid-row-start: 3;
+  grid-area: card3;
 }
 
 .grid > [data-index="4"] {
-  grid-row-start: 4;
+  grid-area: card4;
 }
 
 .grid > [data-index="5"] {
-  grid-column: span 2 / span 2;
-  grid-row-start: 5;
+  grid-area: card5;
 }
 
 .grid > [data-index="6"] {
-  grid-column: span 2 / span 2;
-  grid-row-start: 6;
+  grid-area: card6;
 }
 
 .grid > [data-index="7"] {
-  grid-row-start: 7;
+  grid-area: card7;
 }
 
 .grid > [data-index="8"] {
-  grid-row-start: 7;
+  grid-area: card8;
 }
 
 @media (max-width: 900px) {
   .grid {
     /* På mobil vises kortene i én kolonne. */
     grid-template-columns: 1fr;
+    grid-template-areas: none;
     grid-template-rows: auto;
   }
 

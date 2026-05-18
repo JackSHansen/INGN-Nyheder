@@ -11,36 +11,37 @@
 }
 
 .textBlock {
-  padding: 1rem 1rem 0.9rem;
+  padding: 0.65rem 0.7rem 0.6rem;
   overflow: hidden;
 }
 
 .title {
   margin: 0;
   font-family: var(--font-righteous), cursive;
-  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
-  line-height: 1.02;
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+  line-height: 1.08;
   color: #242424;
 }
 
 .meta {
-  margin: 0.45rem 0 0;
+  margin: 0.3rem 0 0;
   color: #c52525;
-  font-size: 0.9rem;
+  font-size: 0.76rem;
   font-weight: 500;
 }
 
 .excerpt {
-  margin: 0.8rem 0 0;
+  margin: 0.5rem 0 0;
   color: rgba(36, 36, 36, 0.84);
-  line-height: 1.6;
+  line-height: 1.45;
+  font-size: 0.86rem;
 }
 
 .readMore {
   display: inline-block;
-  margin-top: 0.85rem;
+  margin-top: 0.55rem;
   color: #242424;
-  font-size: 0.95rem;
+  font-size: 0.82rem;
 }
 
 .imageLink {
@@ -50,13 +51,14 @@
 
 .image {
   width: 100%;
-  height: 100%;
-  aspect-ratio: 16 / 9;
+  height: auto;
+  display: block;
+  aspect-ratio: 21 / 10;
   object-fit: cover;
 }
 
 .placeholder {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 21 / 10;
   background: linear-gradient(135deg, #e7e0e0 0%, #f7f7f7 100%);
 }
 
@@ -83,37 +85,59 @@
   /* Featured-kort får større typografi og bredere billedformat. */
   grid-template-columns: 1fr;
 
+  .textBlock {
+    padding: 0.55rem 0.65rem 0.5rem;
+  }
+
   .title {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.15rem, 2.2vw, 1.55rem);
   }
 
   .image {
-    aspect-ratio: 16 / 6.5;
+    aspect-ratio: 16 / 7;
   }
 
   .placeholder {
-    aspect-ratio: 16 / 6.5;
+    aspect-ratio: 16 / 7;
   }
 }
 
 .card[data-index="1"],
 .card[data-index="3"] {
   .image {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 3;
   }
 
   .placeholder {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.card[data-index="1"] {
+  .image {
+    aspect-ratio: 5 / 4;
+  }
+
+  .placeholder {
+    aspect-ratio: 5 / 4;
   }
 }
 
 .card[data-index="5"],
 .card[data-index="6"] {
+  .textBlock {
+    padding: 0.55rem 0.65rem 0.5rem;
+  }
+
+  .title {
+    font-size: clamp(0.98rem, 1.5vw, 1.18rem);
+  }
+
   .image {
-    aspect-ratio: 16 / 6;
+    aspect-ratio: 21 / 8;
   }
 
   .placeholder {
-    aspect-ratio: 16 / 6;
+    aspect-ratio: 21 / 8;
   }
 }

@@ -11,3 +11,10 @@ Nyhederne skal kunne sorteres ud fra kategorierne der er vist i navigationen
 Der skal være mulighed for at trykke "læs mere" hvilket viser hele artiklen i et nyt view
 Der skal være tilhørende footer, men de viste links behøver ikke virke
 Der skal optræde mindst 9 artikler på siden, men meget gerne flere
+
+
+
+
+
+
+add loop til grid til at kunne fortsætte amme mænster når der bliver tilføjet flere cards
