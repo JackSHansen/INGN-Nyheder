@@ -11,10 +11,10 @@ Nyhederne skal kunne sorteres ud fra kategorierne der er vist i navigationen
 Der skal være mulighed for at trykke "læs mere" hvilket viser hele artiklen i et nyt view
 Der skal være tilhørende footer, men de viste links behøver ikke virke
 Der skal optræde mindst 9 artikler på siden, men meget gerne flere
+Bonus:
+Når man alle de ovenstående krav, kan man give sig i kast med følgende bonus krav.
 
-
-
-
-
-
-add loop til grid til at kunne fortsætte amme mænster når der bliver tilføjet flere cards
+Sitet skal have et login, hvor man kan logge på som admin
+Når man er logget ind skifter nyhederne til at indeholde to knapper (opdater og slet)
+Når man trykker opdater skal der komme en ny side hvor man kan redigere i artiklen og gemme den opdaterede artikel i sit CMS
+Når man trykker slet skal artiklen slettes fra sit CMS
