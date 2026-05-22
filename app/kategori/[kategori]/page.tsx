@@ -1,25 +1,27 @@
 import { Shell } from "@/components/shell/shell";
 import { ArticleGrid } from "@/components/article-grid/article-grid";
 import { filterArticlesByCategory, getArticleCategories, getArticles } from "@/lib/client";
-import styles from "./page.module.scss";
+import styles from "../../page.module.scss";
 
-type HomePageProps = {
-  searchParams?: {
-    kategori?: string;
-  };
+type CategoryPageProps = {
+  params: Promise<{
+    kategori: string;
+  }>;
 };
 
-export default async function Home({ searchParams }: HomePageProps) {
-  // Finder aktiv kategori fra URL'en (fallback til "Alle").
-  const activeCategory = searchParams?.kategori ?? "Alle";
-  // Henter alle artikler fra Hygraph.
+export async function generateStaticParams() {
+  const categories = await getArticleCategories();
+  return categories.map((kategori) => ({ kategori }));
+}
+
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const { kategori } = await params;
   const articles = await getArticles();
   const categories = await getArticleCategories();
-  // Filtrerer via fælles helper, så logikken er samme sted på alle sider.
-  const filteredArticles = filterArticlesByCategory(articles, activeCategory);
+  const filteredArticles = filterArticlesByCategory(articles, kategori);
 
   return (
-    <Shell categories={categories} activeCategory={activeCategory}>
+    <Shell categories={categories} activeCategory={kategori}>
       {filteredArticles.length > 0 ? (
         <ArticleGrid articles={filteredArticles} />
       ) : (

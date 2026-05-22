@@ -47,6 +47,21 @@ export async function getArticles() {
   return data.articles;
 }
 
+export async function getArticleCategories() {
+  // Finder de kategorier, der faktisk findes i artiklerne fra API'et.
+  const articles = await getArticles();
+  return Array.from(new Set(articles.map((article) => article.kategori).filter(Boolean)));
+}
+
+export function filterArticlesByCategory(articles: Article[], category: string) {
+  // Samler den filtrering, som både forsiden og kategorisiderne bruger.
+  if (category === "Alle") {
+    return articles;
+  }
+
+  return articles.filter((article) => article.kategori === category);
+}
+
 export async function getArticleSlugs() {
   // Afleder URL-venlige slugs fra artikeloverskrifter.
   const articles = await getArticles();

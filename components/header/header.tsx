@@ -5,10 +5,11 @@ import { CategoryNav } from "@/components/category-nav/category-nav";
 import styles from "./header.module.scss";
 
 type HeaderProps = {
+  categories: string[];
   activeCategory?: string;
 };
 
-export function Header({ activeCategory = "Alle" }: HeaderProps) {
+export function Header({ categories, activeCategory = "Alle" }: HeaderProps) {
   // Viser brand, kategorinavigation og to handlingsknapper i topbaren.
   return (
     <header className={styles.header}>
@@ -16,7 +17,7 @@ export function Header({ activeCategory = "Alle" }: HeaderProps) {
         <Link href="/" className={styles.brand} aria-label="Gå til forsiden">
           INGN
         </Link>
-        <CategoryNav activeCategory={activeCategory} />
+        <CategoryNav categories={categories} activeCategory={activeCategory} />
         <button className={styles.iconButton} type="button" aria-label="Brugerprofil">
           <FontAwesomeIcon icon={faUser} />
         </button>
